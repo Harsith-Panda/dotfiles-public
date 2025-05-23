@@ -188,7 +188,10 @@ return {
     "nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },
     opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
+      opts.sources = vim.tbl_extend("force", opts.sources or {}, {
+        { name = "nvim_lsp" },
+        { name = "emoji" },
+      })
     end,
   },
 }
