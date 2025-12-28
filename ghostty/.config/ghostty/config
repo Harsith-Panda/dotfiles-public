@@ -1,23 +1,48 @@
-palette = 0=#1a3a5e
-palette = 1=#ea4d44
-palette = 2=#88fbd2
-palette = 3=#fcf392
-palette = 4=#3674f0
-palette = 5=#be94e4
-palette = 6=#ec69cf
-palette = 7=#75f9a9
-palette = 8=#63676c
-palette = 9=#eb60ad
-palette = 10=#99fbda
-palette = 11=#faf4b5
-palette = 12=#4f8bf6
-palette = 13=#a782f7
-palette = 14=#ed73d2
-palette = 15=#8df8c2
-background = #030b16
-background-opacity = 0.85
-foreground = #e9def2
-cursor-color = #7efba5
-cursor-text = #000000
-selection-background = #7efba4
-selection-foreground = #000000
+# --------------------------
+# Nord Ultra-Dark Ghostty
+# --------------------------
+
+# Font
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+
+# --------------------------
+# Background / Foreground
+# --------------------------
+background = #1c1f26      
+background-opacity = 0.88
+foreground = #d8dee9      
+
+# --------------------------
+# Cursor
+# --------------------------
+cursor-color = #88c0d0
+cursor-text = #1c1f26
+
+# --------------------------
+# Selection
+# --------------------------
+selection-background = #2f3344  
+selection-foreground = #eceff4
+
+# --------------------------
+# ANSI Palette (muted, ultra-dark)
+# --------------------------
+palette = 0=#2e3440   
+palette = 1=#bf616a  
+palette = 2=#a3be8c  
+palette = 3=#ebcb8b   
+palette = 4=#81a1c1  
+palette = 5=#b48ead   
+palette = 6=#8fbcbb   
+palette = 7=#e5e9f0  
+
+palette = 8=#3b4252  
+palette = 9=#bf616a
+palette = 10=#a3be8c
+palette = 11=#ebcb8b
+palette = 12=#81a1c1
+palette = 13=#b48ead
+palette = 14=#8fbcbb
+palette = 15=#eceff4
+
