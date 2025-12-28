@@ -1,26 +1,45 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.1",
-    opts = {
+  "nvim-treesitter/nvim-treesitter",
+  branch = 'master',
+  build = ":TSUpdate",
+
+  config = function()
+    require("nvim-treesitter.configs").setup({
       ensure_installed = {
+        "lua",
+        "python",
         "javascript",
         "typescript",
-        "css",
+        "vimdoc",
+        "vim",
+        "regex",
+        "terraform",
+        "sql",
+        "dockerfile",
+        "toml",
+        "json",
+        "java",
+        "groovy",
+        "go",
         "gitignore",
         "graphql",
-        "http",
-        "json",
-        "scss",
-        "sql",
-        "vim",
-        "lua",
+        "yaml",
+        "make",
+        "cmake",
+        "markdown",
+        "markdown_inline",
+        "bash",
+        "tsx",
+        "css",
+        "html",
       },
-      query_linter = {
+      auto_install = true,
+      highlight = {
         enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
+        additional_vim_regex_highlighting = { "ruby" },
       },
-    },
-  },
+      indent = { enable = true, disable = { "ruby" } },
+    })
+  end,
 }
+
