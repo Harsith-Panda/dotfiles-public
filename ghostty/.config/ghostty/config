@@ -1,48 +1,106 @@
 # --------------------------
 # Nord Ultra-Dark Ghostty
 # --------------------------
+keybind = ctrl+r=reload_config
 
 # Font
 font-family = JetBrainsMono Nerd Font
-font-size = 14
+font-size = 15
+
+# Version one - Nord Ultra Dark
+
 
 # --------------------------
 # Background / Foreground
 # --------------------------
-background = #1c1f26      
-background-opacity = 0.88
-foreground = #d8dee9      
+#background = #1c1f26      
+#background-opacity = 0.88
+#foreground = #d8dee9      
 
 # --------------------------
 # Cursor
 # --------------------------
-cursor-color = #88c0d0
-cursor-text = #1c1f26
+#cursor-color = #88c0d0
+#cursor-text = #1c1f26
 
 # --------------------------
 # Selection
 # --------------------------
-selection-background = #2f3344  
-selection-foreground = #eceff4
+#selection-background = #2f3344  
+#selection-foreground = #eceff4
 
 # --------------------------
 # ANSI Palette (muted, ultra-dark)
 # --------------------------
-palette = 0=#2e3440   
-palette = 1=#bf616a  
-palette = 2=#a3be8c  
-palette = 3=#ebcb8b   
-palette = 4=#81a1c1  
-palette = 5=#b48ead   
-palette = 6=#8fbcbb   
-palette = 7=#e5e9f0  
+#palette = 0=#2e3440   
+#palette = 1=#bf616a  
+#palette = 2=#a3be8c  
+#palette = 3=#ebcb8b   
+#palette = 4=#81a1c1  
+#palette = 5=#b48ead   
+#palette = 6=#8fbcbb   
+#palette = 7=#e5e9f0  
 
-palette = 8=#3b4252  
-palette = 9=#bf616a
-palette = 10=#a3be8c
-palette = 11=#ebcb8b
-palette = 12=#81a1c1
-palette = 13=#b48ead
-palette = 14=#8fbcbb
-palette = 15=#eceff4
+#palette = 8=#3b4252  
+#palette = 9=#bf616a
+#palette = 10=#a3be8c
+#palette = 11=#ebcb8b
+#palette = 12=#81a1c1
+#palette = 13=#b48ead
+#palette = 14=#8fbcbb
+#palette = 15=#eceff4
 
+# Zen&Cursor inspired theme - Dark Subtle (Current)
+# --------------------------
+
+# ── Atmosphere ──────────────────────────
+background = #151719
+foreground = #D4D6D8
+background-opacity = 0.83
+# Blur uses a macOS material that turns opaque when the window loses focus.
+#background-blur = true
+background-blur = true
+# Painted cells stay solid so the prompt arrows keep a hard edge.
+#background-opacity-cells = true
+background-opacity-cells = false
+# An unfocused split is otherwise dimmed, which reads as a solid overlay.
+unfocused-split-opacity = 1
+
+# ── Cursor ──────────────────────────────
+cursor-color = #B4BCC2
+cursor-text = #151719
+cursor-style = block
+cursor-style-blink = false
+# Shell integration otherwise forces a bar at the prompt.
+shell-integration-features = no-cursor
+
+# ── Selection ───────────────────────────
+selection-background = #505860
+selection-foreground = #E4E6E7
+
+# ── Muted ANSI palette ──────────────────
+palette = 0=#202225
+palette = 1=#D09A9C
+palette = 2=#A8C4A0
+#palette = 3=#D4BE96
+#palette = 3=#E2C56E
+#palette = 3=#D4B56E
+palette = 3=#D4BA82
+palette = 4=#8AADD0
+palette = 5=#C4A8C6
+palette = 6=#8FBDBB
+palette = 7=#D0D3D4
+palette = 8=#868E96
+palette = 9=#E0AAAC
+palette = 10=#B6D4AE
+#palette = 11=#E2CCA6
+#palette = 11=#EDD58A
+#palette = 11=#E0C48A
+palette = 11=#E0C9A0
+palette = 12=#A4C0DE
+palette = 13=#D4B8D6
+palette = 14=#A4D0CE
+palette = 15=#E6E8E9
+
+# ── Window ──────────────────────────────
+#unfocused-split-opacity = 0.82
