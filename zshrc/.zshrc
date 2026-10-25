@@ -133,6 +133,22 @@ unset __conda_setup
 
 set -o vi
 
+# Vi cursor. Block in every mode. The redraw hook was sending a bar
+# whenever zsh still reported the insert keymap.
+function _vi_cursor_shape() {
+  emulate -L zsh
+  builtin print -nu "${_ghostty_fd:-1}" '\e[2 q'
+}
+
+function _vi_cursor_install() {
+  autoload -Uz add-zle-hook-widget
+  add-zle-hook-widget zle-line-pre-redraw _vi_cursor_shape
+  add-zle-hook-widget zle-keymap-select _vi_cursor_shape
+  add-zle-hook-widget zle-line-init _vi_cursor_shape
+  precmd_functions=(${precmd_functions:#_vi_cursor_install})
+}
+precmd_functions+=(_vi_cursor_install)
+
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
 export MAMBA_EXE='/Users/harsithps/miniforge3/bin/mamba';
@@ -162,3 +178,100 @@ export CPPFLAGS="-I/usr/local/opt/freetds/include"
 
 # Added by Antigravity
 export PATH="/Users/harsithps/.antigravity/antigravity/bin:$PATH"
+eval "$(zoxide init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/harsithps/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/harsithps/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/harsithps/.antigravity/antigravity/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/harsithps/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Added by Devin
+export PATH="/Users/harsithps/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Themes - Subtle
+# Colors refer to Ghostty's ANSI palette.
+
+
+# ── Subtle syntax highlighting ──────────
+#typeset -A ZSH_HIGHLIGHT_STYLES
+
+#ZSH_HIGHLIGHT_STYLES[default]='fg=7'
+#ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#626873'
+#ZSH_HIGHLIGHT_STYLES[command]='fg=2'
+#ZSH_HIGHLIGHT_STYLES[builtin]='fg=2'
+#ZSH_HIGHLIGHT_STYLES[function]='fg=2'
+#ZSH_HIGHLIGHT_STYLES[alias]='fg=6'
+#ZSH_HIGHLIGHT_STYLES[precommand]='fg=2'
+#ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=5'
+
+#ZSH_HIGHLIGHT_STYLES[path]='fg=4,underline'
+#ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=4'
+#ZSH_HIGHLIGHT_STYLES[globbing]='fg=6'
+#ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=5'
+
+#ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=3'
+#ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=3'
+#ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=3'
+#ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=6'
+
+#ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=8'
+#ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=8'
+#ZSH_HIGHLIGHT_STYLES[redirection]='fg=6'
+#ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+#
+
+# opencode version
+# Same dark palette. Unknown stays recessed grey. Valid commands sit
+# lighter and greener so a typo and a real command don't share a weight.
+typeset -gA ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[default]='fg=#D6D8DA'
+
+ZSH_HIGHLIGHT_STYLES[command]='fg=#B7D4B0,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#B7D4B0,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#B7D4B0,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#B7D4B0,bold'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=#B7D4B0,bold'
+#ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=#B7D4B0,bold'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=#B7D4B0,bold,underline'
+
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#A8D4D2,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#A8D4D2,bold'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#A8D4D2,bold'
+
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#D0B8D4'
+
+# Unknown commands: dark grey, clearly not a command
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#7D858D'
+
+#ZSH_HIGHLIGHT_STYLES[path]='fg=#A9C4E0'
+#ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#A9C4E0'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#A9C4E0,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#A9C4E0,underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#A8D4D2'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#D0B8D4'
+
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#E0C49A'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#E0C49A'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#E0C49A'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=#A8D4D2'
+
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#A7AEB6'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#A7AEB6'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=#C4B0C8'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#8E969E'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#8E969E'
+
+# Load syntax highlighting LAST
+source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
