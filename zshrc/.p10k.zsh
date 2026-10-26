@@ -230,7 +230,9 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  # typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  # Truecolor so the grey is the same outside Ghostty.
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#969EA4'
   # Default current directory foreground color.
   # typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # opencode version: light text on the mid blue pill was hard to read
@@ -376,11 +378,22 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control background colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
+  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
+  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
+  # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#D48450'
+  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#DE8B50'
+  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#E38E50'
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#E89250'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#D48450'
+  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#DE8B50'
+  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#E38E50'
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#E89250'
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#868E96'
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -534,15 +547,19 @@
   # it will signify success by turning green.
   typeset -g POWERLEVEL9K_STATUS_OK=true
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
-  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
+  # typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
+  # typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#A8C4A0'
+  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND='#202225'
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=2
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=0
+  # typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=2
+  # typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=0
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND='#A8C4A0'
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND='#202225'
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
@@ -574,8 +591,13 @@
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#202225'
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#D48450'
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#DE8B50'
+  # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#E38E50'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#E89250'
   # Show duration of the last command if takes at least this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -865,7 +887,8 @@
   typeset -g POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND=2
   # Text and color for visual vi mode.
   typeset -g POWERLEVEL9K_VI_VISUAL_MODE_STRING=VISUAL
-  typeset -g POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND=4
+  # typeset -g POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND=4
+  typeset -g POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND='#969EA4'
   # Text and color for overtype (a.k.a. overwrite and replace) vi mode.
   typeset -g POWERLEVEL9K_VI_OVERWRITE_MODE_STRING=OVERTYPE
   typeset -g POWERLEVEL9K_VI_MODE_OVERWRITE_BACKGROUND=3
@@ -1020,8 +1043,10 @@
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=0
-  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=4
+  # typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=0
+  # typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=4
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND='#202225'
+  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND='#969EA4'
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # If set to "false", won't show virtualenv if pyenv is already shown.
@@ -1034,8 +1059,10 @@
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
-  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ANACONDA_BACKGROUND=4
+  # typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=0
+  # typeset -g POWERLEVEL9K_ANACONDA_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND='#202225'
+  typeset -g POWERLEVEL9K_ANACONDA_BACKGROUND='#969EA4'
 
   # Anaconda segment format. The following parameters are available within the expansion.
   #
@@ -1068,8 +1095,10 @@
 
   ################[ pyenv: python environment (https://github.com/pyenv/pyenv) ]################
   # Pyenv color.
-  typeset -g POWERLEVEL9K_PYENV_FOREGROUND=0
-  typeset -g POWERLEVEL9K_PYENV_BACKGROUND=4
+  # typeset -g POWERLEVEL9K_PYENV_FOREGROUND=0
+  # typeset -g POWERLEVEL9K_PYENV_BACKGROUND=4
+  typeset -g POWERLEVEL9K_PYENV_FOREGROUND='#202225'
+  typeset -g POWERLEVEL9K_PYENV_BACKGROUND='#969EA4'
   # Hide python version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_PYENV_SOURCES=(shell local global)
   # If set to false, hide python version if it's the same as global:
