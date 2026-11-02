@@ -383,9 +383,25 @@
   # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
   # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
   # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#38764A'
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#B7D4BE'
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#38764A'
+  # The green from the prompt screenshot. Dark text stays readable on it.
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#6BB476'
   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#D48450'
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#A8C4A0'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#38764A'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#B7D4BE'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#38764A'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#6BB476'
+  # Dark ink on this green. Dirty and conflicted stay black on the orange pill.
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#F4F6F4'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#F4F6F4'
+  # typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#38764A'
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#38764A'
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#202225'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#202225'
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#D48450'
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#868E96'
 
@@ -415,11 +431,18 @@
     fi
 
     # Styling for different parts of Git status.
+    # Clean and untracked use the screenshot green, with dark ink.
+    # Staged or unstaged changes use the orange pill, so their ink stays black.
     local       meta='%7F' # white foreground
     local      clean='%0F' # black foreground
     local   modified='%0F' # black foreground
     local  untracked='%0F' # black foreground
     local conflicted='%1F' # red foreground
+    if [[ $VCS_STATUS_HAS_STAGED == 0 && $VCS_STATUS_HAS_UNSTAGED == 0 ]]; then
+      meta='%F{#202225}'
+      clean='%F{#202225}'
+      untracked='%F{#202225}'
+    fi
 
     local res
 
