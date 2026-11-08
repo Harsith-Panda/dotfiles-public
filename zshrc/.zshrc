@@ -284,3 +284,7 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=#8E969E'
 # Load syntax highlighting LAST
 source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+alias ff='fzf -m --preview="bat --color=always {}"'
+alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
