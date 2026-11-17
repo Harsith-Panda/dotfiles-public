@@ -9,3 +9,5 @@
 3. Install stow with brew
 4. Use *stow <directory_name>* . This creates a symlink.
 5. Setup done.
+
+## Nvim Configuration Guide:
